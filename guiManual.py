@@ -35,7 +35,7 @@ class GuiManual(object):
         self.tabHowToUseQuasim = ttk.Frame(self.tab_control)
         self.tab_control.add(self.tabHowToUseQuasim, text='How to use Quasim')
 
-        btnQuickStart = tk.Button(self.tabHowToUseQuasim, text="QickStart", command = self.showQuickstartEntry)
+        btnQuickStart = tk.Button(self.tabHowToUseQuasim, text="QuickStart", command = self.showQuickstartEntry)
         btnNumberOfQubits = tk.Button(self.tabHowToUseQuasim, text="NumberOfQubits", command = self.showNumberOfQubitsEntry)
         btnSimulator = tk.Button(self.tabHowToUseQuasim, text="Simulator", command = self.showSimulatorEntry)
 
@@ -43,9 +43,22 @@ class GuiManual(object):
         self.tabQuantumComputingGeneral = ttk.Frame(self.tab_control)
         self.tab_control.add(self.tabQuantumComputingGeneral, text='Quantum Computing')
 
-        btnQubit = tk.Button(self.tabQuantumComputingGeneral, text="What is a qubit?", command = self.showQubitEntry)
+        btnQubit = tk.Button(self.tabQuantumComputingGeneral, text="Qubits", command = self.showQubitEntry)
         btnEntanglement = tk.Button(self.tabQuantumComputingGeneral, text="Entanglement", command = self.showEntanglementEntry)
         btnQuantumRegister = tk.Button(self.tabQuantumComputingGeneral, text="Quantum registers", command = self.showQuantumRegisterEntry)
+
+        btnXGate = tk.Button(self.tabQuantumComputingGeneral, text="Pauli-X-Gate", command = self.showXGateEntry)
+        btnYGate = tk.Button(self.tabQuantumComputingGeneral, text="Pauli-Y-Gate", command = self.showYGateEntry)
+        btnZGate = tk.Button(self.tabQuantumComputingGeneral, text="Pauli-Z-Gate", command = self.showZGateEntry)
+        btnHGate = tk.Button(self.tabQuantumComputingGeneral, text="Hadamard Gate", command = self.showHGateEntry)
+        btnSGate = tk.Button(self.tabQuantumComputingGeneral, text="S Gate", command = self.showQuantumRegisterEntry)
+        btnTGate = tk.Button(self.tabQuantumComputingGeneral, text="T Gate", command = self.showQuantumRegisterEntry)
+        btnIGate = tk.Button(self.tabQuantumComputingGeneral, text="I Gate", command = self.showQuantumRegisterEntry)
+        btnMGate = tk.Button(self.tabQuantumComputingGeneral, text="M Gate", command = self.showQuantumRegisterEntry)
+        btnCnotGate = tk.Button(self.tabQuantumComputingGeneral, text="CNOT Gate", command = self.showQuantumRegisterEntry)
+        btnSwapGate = tk.Button(self.tabQuantumComputingGeneral, text="Swap Gate", command = self.showQuantumRegisterEntry)
+        btnToffoliGate = tk.Button(self.tabQuantumComputingGeneral, text="Toffoli Gate", command = self.showQuantumRegisterEntry)
+        btnFredkinGate = tk.Button(self.tabQuantumComputingGeneral, text="Fredkin Gate", command = self.showQuantumRegisterEntry)
 
         #add to window
         btnQuickStart.grid(column=1, row=0)
@@ -56,34 +69,87 @@ class GuiManual(object):
         btnEntanglement.grid(column=2, row=0)
         btnQuantumRegister.grid(column=3, row=0)
 
+        btnXGate.grid(column=1, row=1)
+        btnYGate.grid(column=2, row=1)
+        btnZGate.grid(column=3, row=1)
+        btnIGate.grid(column=4, row=1)
+
+        btnHGate.grid(column=1, row=2)
+        btnSGate.grid(column=2, row=2)
+        btnTGate.grid(column=3, row=2)
+        btnMGate.grid(column=4, row=2)
+
+        btnCnotGate.grid(column=1, row=3)
+        btnSwapGate.grid(column=2, row=3)
+        btnToffoliGate.grid(column=3, row=3)
+        btnFredkinGate.grid(column=4, row=3)
+
         self.tab_control.pack()
 
     ## Shows the how to use Quasim entry
     def showQuickstartEntry(self):
-        self.QuickstartWindow = tk.Toplevel(self.manualWindow)
-        self.QuickstartWindow.title("Quickstart")
+        QuickstartWindow = tk.Toplevel(self.manualWindow)
+        QuickstartWindow.title("Quickstart")
 
     ## Shows the number of Qubits entry
     def showNumberOfQubitsEntry(self):
-        self.NumberOfQubitsWindow = tk.Toplevel(self.manualWindow)
-        self.NumberOfQubitsWindow.title("Number of Qubits")
+        NumberOfQubitsWindow = tk.Toplevel(self.manualWindow)
+        NumberOfQubitsWindow.title("Number of Qubits")
 
     ## Shows the simulator entry
     def showSimulatorEntry(self):
-        self.SimulatorWindow = tk.Toplevel(self.manualWindow)
-        self.SimulatorWindow.title("Simulator")
+        SimulatorWindow = tk.Toplevel(self.manualWindow)
+        SimulatorWindow.title("Simulator")
 
     ## Shows the qubit entry
     def showQubitEntry(self):
-        self.qubitEntryWindow = tk.Toplevel(self.manualWindow)
-        self.qubitEntryWindow.title("Qubit")
+        qubitEntryWindow = tk.Toplevel(self.manualWindow)
+        qubitEntryWindow.title("Qubit")
 
     ## Shows the entanglement entry
     def showEntanglementEntry(self):
-        self.entanglementEntryWindow = tk.Toplevel(self.manualWindow)
-        self.entanglementEntryWindow.title("Entanglement")
+        entanglementEntryWindow = tk.Toplevel(self.manualWindow)
+        entanglementEntryWindow.title("Entanglement")
 
     ## Shows the quantum registry entry
     def showQuantumRegisterEntry(self):
-        self.quantumRegisterEntryWindow = tk.Toplevel(self.manualWindow)
-        self.quantumRegisterEntryWindow.title("Quantum register")
+        quantumRegisterEntryWindow = tk.Toplevel(self.manualWindow)
+        quantumRegisterEntryWindow.title("Quantum register")
+        
+    def showXGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("Hadamard Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/HGate.GIF")
+        lblHGate = tk.Label(hGateEntyWindow, image = imageGate)
+        lblHgate.image = imageGate
+        lblHGate.pack()
+        
+    def showYGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("Hadamard Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/HGate.GIF")
+        lblHGate = tk.Label(hGateEntyWindow, image = imageGate)
+        lblHgate.image = imageGate
+        lblHGate.pack()
+        
+    def showZGateEntry(self):
+        zGateEntryWindow = tk.Toplevel(self.manualWindow)
+        zGateEntryWindow.title("Pauli-Z-Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/ZGate.GIF")
+        lblZGate = tk.Label(zGateEntryWindow, image = imageGate)
+        lblZGate.image = imageGate
+        lblZGate.pack()
+        
+    def showHGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("Hadamard Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/HGate.GIF")
+        lblHGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblHGate.image = imageGate
+        lblHGate.pack()
+
+    def openAbout(self):
+        aboutWindow = tk.Toplevel(self.parent)
+        aboutWindow.title("About Quasim")
+        lblAbout = tk.Label(aboutWindow, text="Quasim was developed by Janis Mohr as part of his master thesis focused on quantum circuits and their simulation at Bochum University of Applied Sciences. This software is licensed under Apache 2.0.", wraplength=200)
+        lblAbout.pack()

@@ -167,7 +167,7 @@ class Gui(object):
         helpMenu = tk.Menu(menu)
         helpMenu.add_command(label='Manual', command = self.guiManual.openManual)
         helpMenu.add_separator()
-        helpMenu.add_command(label='About')
+        helpMenu.add_command(label='About', command = self.guiManual.openAbout)
 
         menu.add_cascade(label='Help', menu = helpMenu)
 
