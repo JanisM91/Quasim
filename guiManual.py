@@ -51,14 +51,14 @@ class GuiManual(object):
         btnYGate = tk.Button(self.tabQuantumComputingGeneral, text="Pauli-Y-Gate", command = self.showYGateEntry)
         btnZGate = tk.Button(self.tabQuantumComputingGeneral, text="Pauli-Z-Gate", command = self.showZGateEntry)
         btnHGate = tk.Button(self.tabQuantumComputingGeneral, text="Hadamard Gate", command = self.showHGateEntry)
-        btnSGate = tk.Button(self.tabQuantumComputingGeneral, text="S Gate", command = self.showQuantumRegisterEntry)
-        btnTGate = tk.Button(self.tabQuantumComputingGeneral, text="T Gate", command = self.showQuantumRegisterEntry)
-        btnIGate = tk.Button(self.tabQuantumComputingGeneral, text="I Gate", command = self.showQuantumRegisterEntry)
-        btnMGate = tk.Button(self.tabQuantumComputingGeneral, text="M Gate", command = self.showQuantumRegisterEntry)
-        btnCnotGate = tk.Button(self.tabQuantumComputingGeneral, text="CNOT Gate", command = self.showQuantumRegisterEntry)
-        btnSwapGate = tk.Button(self.tabQuantumComputingGeneral, text="Swap Gate", command = self.showQuantumRegisterEntry)
-        btnToffoliGate = tk.Button(self.tabQuantumComputingGeneral, text="Toffoli Gate", command = self.showQuantumRegisterEntry)
-        btnFredkinGate = tk.Button(self.tabQuantumComputingGeneral, text="Fredkin Gate", command = self.showQuantumRegisterEntry)
+        btnSGate = tk.Button(self.tabQuantumComputingGeneral, text="S Gate", command = self.showSGateEntry)
+        btnTGate = tk.Button(self.tabQuantumComputingGeneral, text="T Gate", command = self.showTGateEntry)
+        btnIGate = tk.Button(self.tabQuantumComputingGeneral, text="I Gate", command = self.showIGateEntry)
+        btnMGate = tk.Button(self.tabQuantumComputingGeneral, text="M Gate", command = self.showMGateEntry)
+        btnCnotGate = tk.Button(self.tabQuantumComputingGeneral, text="CNOT Gate", command = self.showCnotGateEntry)
+        btnSwapGate = tk.Button(self.tabQuantumComputingGeneral, text="Swap Gate", command = self.showSwapGateEntry)
+        btnToffoliGate = tk.Button(self.tabQuantumComputingGeneral, text="Toffoli Gate", command = self.showToffoliGateEntry)
+        btnFredkinGate = tk.Button(self.tabQuantumComputingGeneral, text="Fredkin Gate", command = self.showFredkinGateEntry)
 
         #add to window
         btnQuickStart.grid(column=1, row=0)
@@ -90,47 +90,72 @@ class GuiManual(object):
     def showQuickstartEntry(self):
         QuickstartWindow = tk.Toplevel(self.manualWindow)
         QuickstartWindow.title("Quickstart")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/Quickstart.GIF")
+        lblQ = tk.Label(QuickstartWindow, image = imageGate)
+        lblQ.image = imageGate
+        lblQ.pack()
 
     ## Shows the number of Qubits entry
     def showNumberOfQubitsEntry(self):
         NumberOfQubitsWindow = tk.Toplevel(self.manualWindow)
         NumberOfQubitsWindow.title("Number of Qubits")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/NumberOfQubits.GIF")
+        lblQ = tk.Label(NumberOfQubitsWindow, image = imageGate)
+        lblQ.image = imageGate
+        lblQ.pack()
 
     ## Shows the simulator entry
     def showSimulatorEntry(self):
         SimulatorWindow = tk.Toplevel(self.manualWindow)
         SimulatorWindow.title("Simulator")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/Simulator.GIF")
+        lblQ = tk.Label(SimulatorWindow, image = imageGate)
+        lblQ.image = imageGate
+        lblQ.pack()
 
     ## Shows the qubit entry
     def showQubitEntry(self):
         qubitEntryWindow = tk.Toplevel(self.manualWindow)
-        qubitEntryWindow.title("Qubit")
+        qubitEntryWindow.title("Qubits")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/Qubits.GIF")
+        lblQ = tk.Label(qubitEntryWindow, image = imageGate)
+        lblQ.image = imageGate
+        lblQ.pack()
+
 
     ## Shows the entanglement entry
     def showEntanglementEntry(self):
         entanglementEntryWindow = tk.Toplevel(self.manualWindow)
         entanglementEntryWindow.title("Entanglement")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/Entanglement.GIF")
+        lblQ = tk.Label(entanglementEntryWindow, image = imageGate)
+        lblQ.image = imageGate
+        lblQ.pack()
 
     ## Shows the quantum registry entry
     def showQuantumRegisterEntry(self):
         quantumRegisterEntryWindow = tk.Toplevel(self.manualWindow)
         quantumRegisterEntryWindow.title("Quantum register")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/QuantumRegister.GIF")
+        lblQ = tk.Label(quantumRegisterEntryWindow, image = imageGate)
+        lblQ.image = imageGate
+        lblQ.pack()
         
     def showXGateEntry(self):
         hGateEntryWindow = tk.Toplevel(self.manualWindow)
-        hGateEntryWindow.title("Hadamard Gate")
-        imageGate = tk.PhotoImage(file="./pics/QuasimManual/HGate.GIF")
-        lblHGate = tk.Label(hGateEntyWindow, image = imageGate)
-        lblHgate.image = imageGate
-        lblHGate.pack()
+        hGateEntryWindow.title("Pauli-X-Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/XGate.GIF")
+        lblXGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblXGate.image = imageGate
+        lblXGate.pack()
         
     def showYGateEntry(self):
         hGateEntryWindow = tk.Toplevel(self.manualWindow)
-        hGateEntryWindow.title("Hadamard Gate")
-        imageGate = tk.PhotoImage(file="./pics/QuasimManual/HGate.GIF")
-        lblHGate = tk.Label(hGateEntyWindow, image = imageGate)
-        lblHgate.image = imageGate
-        lblHGate.pack()
+        hGateEntryWindow.title("Pauli-Y-Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/YGate.GIF")
+        lblYGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblYGate.image = imageGate
+        lblYGate.pack()
         
     def showZGateEntry(self):
         zGateEntryWindow = tk.Toplevel(self.manualWindow)
@@ -147,6 +172,70 @@ class GuiManual(object):
         lblHGate = tk.Label(hGateEntryWindow, image = imageGate)
         lblHGate.image = imageGate
         lblHGate.pack()
+        
+    def showSGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("S Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/SGate.GIF")
+        lblSGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblSGate.image = imageGate
+        lblSGate.pack()
+        
+    def showTGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("T Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/TGate.GIF")
+        lblTGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblTGate.image = imageGate
+        lblTGate.pack()
+        
+    def showIGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("I Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/IGate.GIF")
+        lblIGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblIGate.image = imageGate
+        lblIGate.pack()
+        
+    def showMGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("Measurement")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/TGate.GIF")
+        lblTGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblTGate.image = imageGate
+        lblTGate.pack()
+        
+    def showCnotGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("CNOT Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/CNOTGate.GIF")
+        lblCnotGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblCnotGate.image = imageGate
+        lblCnotGate.pack()
+        
+    def showSwapGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("Swap Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/SwapGate.GIF")
+        lblSwapGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblSwapGate.image = imageGate
+        lblSwapGate.pack()
+        
+    def showToffoliGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("Toffoli Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/ToffoliGate.GIF")
+        lblToffoliGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblToffoliGate.image = imageGate
+        lblToffoliGate.pack()
+        
+    def showFredkinGateEntry(self):
+        hGateEntryWindow = tk.Toplevel(self.manualWindow)
+        hGateEntryWindow.title("Fredkin Gate")
+        imageGate = tk.PhotoImage(file="./pics/QuasimManual/FredkinGate.GIF")
+        lblFredkinGate = tk.Label(hGateEntryWindow, image = imageGate)
+        lblFredkinGate.image = imageGate
+        lblFredkinGate.pack()
 
     def openAbout(self):
         aboutWindow = tk.Toplevel(self.parent)
