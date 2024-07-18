@@ -28,7 +28,9 @@ twitter_username: hab_ich_nicht
 github_username:  JanisM91
 
 # Build settings
-theme: minima
+remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0 
+plugins:
+- jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
