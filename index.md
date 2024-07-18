@@ -1,7 +1,7 @@
 # SIMULATOR
 
 ## Beschreibung
-Simulator ist cool.
+[Ich bin ein Link.](../pages/beschreibung.md)
 
 ## Nutzung
 Hier steht, wie es geht. 
